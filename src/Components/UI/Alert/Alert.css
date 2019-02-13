@@ -1,0 +1,27 @@
+/* .Alert {
+    text-align: left;
+    position: fixed;
+    background-color: white;
+    width: 70%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 15%;
+    top: 50%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    z-index: 500;
+    transform: translate(0, -100vh);
+    opacity: 0;
+} */
+
+.Alert-show {
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.alert {
+    overflow: hidden;
+    width: 30%;
+    /* display: inline; */
+}
