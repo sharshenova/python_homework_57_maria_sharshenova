@@ -8,6 +8,10 @@ class App extends Component {
 
   state = {
     purchasing: false
+    // buttons: [
+    //   {btnType: 'Danger', label: 'CLOSE', clicked: this.cancelHandler},
+    //   {btnType: 'Success', label: 'CONTINUE', clicked: this.successHandler}
+    // ]
   };
 
   purchaseHandler = () => {
@@ -28,11 +32,14 @@ class App extends Component {
     return (
       <div className="Container">
         <Content purchaseStart={this.purchaseHandler}/>
-        <Modal show={this.state.purchasing} cancel={this.cancelHandler}>
-          <OrderSummary
-            purchaseContinue={this.successHandler}
-            purchaseCancel={this.cancelHandler}
-          />
+        <Modal
+          show={this.state.purchasing}
+          close={this.cancelHandler}
+          purchaseContinue={this.successHandler}
+          purchaseCancel={this.cancelHandler}
+          title="Some kinda modal title"
+        >
+          <OrderSummary/>
         </Modal>
       </div>
     );
