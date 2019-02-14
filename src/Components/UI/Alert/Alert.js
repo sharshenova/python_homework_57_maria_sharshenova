@@ -3,12 +3,14 @@ import './Alert.css';
 
 const Alert = props => (
 	<div>
-		<div className={"alert alert-primary" + (props.show ? ' Alert-show' : '')} role="alert">
-			<div className="float-left">
-				{props.children}
-			</div>
-			<button type="button" className="close float-right">x</button>
-		</div>
+		{!props.alertIsHidden ?
+			(<div className={['alert', props.alert.alertType].join(' ')} role="alert">
+				<div className="float-left">
+					{props.alert.text}
+				</div>
+				{props.alert.dismiss ? <button onClick={props.clicked} type="button" className="close float-right">x</button> : <div></div>}			
+			</div>) : <div></div>
+		}
 	</div>
 );
 
